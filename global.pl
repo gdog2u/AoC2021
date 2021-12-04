@@ -31,7 +31,7 @@ sub debug
     print "## DEBUG ##\n";
     while(my $arg = shift)
     {
-        print "  $arg\n";
+        print "   $arg\n";
     }
     print "###########\n";
 }
