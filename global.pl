@@ -29,7 +29,7 @@ sub get_inputs
 sub debug
 {
     print "## DEBUG ##\n";
-    while(my $arg = shift)
+    foreach my $arg (@_)
     {
         print "   $arg\n";
     }
