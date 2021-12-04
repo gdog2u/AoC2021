@@ -1,0 +1,4 @@
+# no need to store demo inputs
+demo.txt
+# personal cache of wrong answers
+.wrong
