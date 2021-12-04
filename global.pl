@@ -13,10 +13,21 @@ sub get_inputs
 
     while(my $line = <$fh>)
     {
+        chomp $line;
         push(@lines, $line);
     }
 
     return @lines;
+}
+
+sub debug
+{
+    print "## DEBUG ##\n";
+    while($arg = shift)
+    {
+        print "  $arg";
+    }
+    print "###########\n";
 }
 
 1;
