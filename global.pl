@@ -2,6 +2,8 @@
 use warnings;
 use strict;
 
+# Load the puzzle inputs into an array
+# Loads the inputs from the file name supplied as first parameter
 sub get_inputs
 {
     if(!$ARGV[0])
@@ -22,6 +24,8 @@ sub get_inputs
     return @lines;
 }
 
+# Print a debug notice to the console
+# Allows for any number of parameters
 sub debug
 {
     print "## DEBUG ##\n";
@@ -32,7 +36,7 @@ sub debug
     print "###########\n";
 }
 
-
+# Return a value clamped between a minimum & a maximum
 sub clamp
 {
     my $value = $_[0];
