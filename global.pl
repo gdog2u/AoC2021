@@ -32,4 +32,17 @@ sub debug
     print "###########\n";
 }
 
+
+sub clamp
+{
+    my $value = $_[0];
+    my $min = $_[1] || 0;
+    my $max = $_[2] || 1;
+
+    if($value < $min){ return $min; }
+    if($value > $max){ return $max; }
+    
+    return $value;
+}
+
 1;
