@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+use warnings;
+use strict;
 
 sub get_inputs
 {
@@ -9,7 +11,7 @@ sub get_inputs
 
     my @lines;
 
-    open($fh, '<', $ARGV[0]) or die "Failed to open file: $ARGV[0]";
+    open(my $fh, '<', $ARGV[0]) or die "Failed to open file: $ARGV[0]";
 
     while(my $line = <$fh>)
     {
@@ -23,9 +25,9 @@ sub get_inputs
 sub debug
 {
     print "## DEBUG ##\n";
-    while($arg = shift)
+    while(my $arg = shift)
     {
-        print "  $arg";
+        print "  $arg\n";
     }
     print "###########\n";
 }
