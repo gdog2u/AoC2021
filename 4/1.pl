@@ -12,25 +12,19 @@ my @calls = split(/,/, shift @inputs);
 # Throw out empty line
 shift @inputs;
 
+# Initialize all boards
 our @boards = ();
 create_boards();
 
-# map{ print_board($_); } @boards;
-
-# print_board($boards[0]);
-
-# print "\n\n\n";
-
+# Quick loop through the first four calls, since we know there can't be a bingo yet
 for(0..4){ my $call = $_; map{ mark_call($calls[$call], $_); } @boards; }
 
+# Go through each call individually
 foreach my $call (@calls)
 {
 	map{ mark_call($call, $_); } @boards;
 	if(check_for_bingo($call)){ last; }
 }
-
-# # if(check_for_bingo()){ debug("BINGO FOUND"); }
-# check_for_bingo();
 
 # Generate boards from the input
 sub create_boards
@@ -133,6 +127,7 @@ sub check_for_bingo
 	return $bingo_found;
 }
 
+# Announce the winner and the boards score
 sub score_board
 {
 	my $bingo_board = $_[0];
